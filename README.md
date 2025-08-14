@@ -44,4 +44,28 @@ from patients
 Show first name, last name, and the full province name of each patient.
 Example: 'Ontario' instead of 'ON'
 
+8.
+Take a look at the invoice_line table that stores information about the purchased tracks. Export all data from the table, filtering the result so that you only get tracks that cost more than $0.99. The values you need are stored in the unit_price column.
+
+SELECT *
+FROM invoice_line
+WHERE unit_price > .99;
+
+Get these fields from the client table: first_name (the client’s first name), last_name (the client’s last name), and city (the client’s location). Get only client records for customers that live in Brazil. Tip: country of residence is stored in the country field.
+
+select first_name,Last_name,city
+from client
+where country = 'Brazil';
+
+A. Check when and where the biggest purchases were made: from the invoice table, get the billing_address field and the invoice_date.
+B. The date is stored in the 'YYYY-MM-DD HH:MM:SS' format but you need just the date without the time ('YYYY-MM-DD').
+C. Filter out the records where the value of total is greater than or equal to 8.
+
+select billing_address, cast(invoice_date as date) as invoice_date
+from invoice
+where total >= 8;
+
+
+9.
+
  
